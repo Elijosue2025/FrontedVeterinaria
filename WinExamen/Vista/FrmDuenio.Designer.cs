@@ -11,14 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+      
 
         #region Windows Form Designer generated code
 
@@ -35,6 +28,14 @@
             Actualizar = new Button();
             agregardueño = new Button();
             groupBox1 = new GroupBox();
+            fecha = new TextBox();
+            label7 = new Label();
+            checkBox1 = new CheckBox();
+            label2 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            direccion = new TextBox();
+            email = new TextBox();
             label4 = new Label();
             label3 = new Label();
             Nombre = new Label();
@@ -43,14 +44,6 @@
             textBox2 = new TextBox();
             label1 = new Label();
             pk_duenio = new TextBox();
-            label2 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            direccion = new TextBox();
-            email = new TextBox();
-            checkBox1 = new CheckBox();
-            label7 = new Label();
-            fecha = new TextBox();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox2.SuspendLayout();
@@ -78,6 +71,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(689, 245);
             dataGridView1.TabIndex = 11;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // groupBox2
             // 
@@ -101,6 +95,7 @@
             listarDuenio.TabIndex = 10;
             listarDuenio.Text = "Listar";
             listarDuenio.UseVisualStyleBackColor = true;
+            listarDuenio.Click += listarDuenio_Click;
             // 
             // Actualizar
             // 
@@ -111,6 +106,7 @@
             Actualizar.TabIndex = 9;
             Actualizar.Text = "Actualizar";
             Actualizar.UseVisualStyleBackColor = true;
+            Actualizar.Click += Actualizar_Click;
             // 
             // agregardueño
             // 
@@ -121,6 +117,7 @@
             agregardueño.TabIndex = 8;
             agregardueño.Text = "Agregar";
             agregardueño.UseVisualStyleBackColor = true;
+            agregardueño.Click += agregardueño_Click;
             // 
             // groupBox1
             // 
@@ -147,6 +144,76 @@
             groupBox1.Size = new Size(563, 256);
             groupBox1.TabIndex = 15;
             groupBox1.TabStop = false;
+            // 
+            // fecha
+            // 
+            fecha.Location = new Point(370, 29);
+            fecha.Margin = new Padding(3, 4, 3, 4);
+            fecha.Name = "fecha";
+            fecha.Size = new Size(114, 27);
+            fecha.TabIndex = 16;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(262, 29);
+            label7.Name = "label7";
+            label7.Size = new Size(102, 20);
+            label7.TabIndex = 15;
+            label7.Text = "Fecha registro";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(329, 201);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(131, 24);
+            checkBox1.TabIndex = 14;
+            checkBox1.Text = "Activo/Inactivo";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(254, 204);
+            label2.Name = "label2";
+            label2.Size = new Size(54, 20);
+            label2.TabIndex = 13;
+            label2.Text = "Estado";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(254, 142);
+            label5.Name = "label5";
+            label5.Size = new Size(72, 20);
+            label5.TabIndex = 12;
+            label5.Text = "Direccion";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(254, 86);
+            label6.Name = "label6";
+            label6.Size = new Size(46, 20);
+            label6.TabIndex = 11;
+            label6.Text = "Email";
+            // 
+            // direccion
+            // 
+            direccion.Location = new Point(329, 138);
+            direccion.Margin = new Padding(3, 4, 3, 4);
+            direccion.Name = "direccion";
+            direccion.Size = new Size(114, 27);
+            direccion.TabIndex = 9;
+            // 
+            // email
+            // 
+            email.Location = new Point(329, 82);
+            email.Margin = new Padding(3, 4, 3, 4);
+            email.Name = "email";
+            email.Size = new Size(114, 27);
+            email.TabIndex = 8;
             // 
             // label4
             // 
@@ -217,76 +284,6 @@
             pk_duenio.Size = new Size(114, 27);
             pk_duenio.TabIndex = 0;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(254, 204);
-            label2.Name = "label2";
-            label2.Size = new Size(54, 20);
-            label2.TabIndex = 13;
-            label2.Text = "Estado";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(254, 142);
-            label5.Name = "label5";
-            label5.Size = new Size(72, 20);
-            label5.TabIndex = 12;
-            label5.Text = "Direccion";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(254, 86);
-            label6.Name = "label6";
-            label6.Size = new Size(46, 20);
-            label6.TabIndex = 11;
-            label6.Text = "Email";
-            // 
-            // direccion
-            // 
-            direccion.Location = new Point(329, 138);
-            direccion.Margin = new Padding(3, 4, 3, 4);
-            direccion.Name = "direccion";
-            direccion.Size = new Size(114, 27);
-            direccion.TabIndex = 9;
-            // 
-            // email
-            // 
-            email.Location = new Point(329, 82);
-            email.Margin = new Padding(3, 4, 3, 4);
-            email.Name = "email";
-            email.Size = new Size(114, 27);
-            email.TabIndex = 8;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(329, 201);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(131, 24);
-            checkBox1.TabIndex = 14;
-            checkBox1.Text = "Activo/Inactivo";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(262, 29);
-            label7.Name = "label7";
-            label7.Size = new Size(102, 20);
-            label7.TabIndex = 15;
-            label7.Text = "Fecha registro";
-            // 
-            // fecha
-            // 
-            fecha.Location = new Point(370, 29);
-            fecha.Margin = new Padding(3, 4, 3, 4);
-            fecha.Name = "fecha";
-            fecha.Size = new Size(114, 27);
-            fecha.TabIndex = 16;
-            // 
             // FrmDuenio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -298,6 +295,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmDuenio";
             Text = "FrmFacturas";
+            Load += FrmDuenio_Load;
             groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox2.ResumeLayout(false);

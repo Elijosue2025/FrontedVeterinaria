@@ -16,8 +16,7 @@ namespace WinExamen.Controlador
         public APIDuenio()
         {
             _httpClient = new HttpClient();
-            _baseUrl = "https://localhost:7000/api/Duenio"; // Cambia por tu URL base
-
+            _baseUrl = "https://localhost:7034/api/Duenio"; // URL correcta
             // Configurar headers si es necesario
             _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
         }
@@ -180,31 +179,7 @@ namespace WinExamen.Controlador
         /// <param name="criterio">Campo de búsqueda (nombre, apellido, email, etc.)</param>
         /// <param name="busqueda">Término de búsqueda</param>
         /// <returns>Lista de dueños que coinciden con el criterio</returns>
-        public async Task<List<Dueniocs>> BuscarDueniosPorCriterioAsync(string criterio, string busqueda)
-        {
-            try
-            {
-                var response = await _httpClient.GetAsync($"{_baseUrl}/BuscarPorCriterio?criterio={criterio}&busqueda={busqueda}");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var jsonContent = await response.Content.ReadAsStringAsync();
-
-                    // La API devuelve un objeto con estructura { message, data, count }
-                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<Dueniocs>>>(jsonContent);
-                    return apiResponse?.Data ?? new List<Dueniocs>();
-                }
-                else
-                {
-                    throw new HttpRequestException($"Error al buscar dueños: {response.StatusCode} - {response.ReasonPhrase}");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error al buscar dueños por criterio: {ex.Message}", ex);
-            }
-        }
-
+       
         /// <summary>
         /// Cambia el estado de un dueño (activo/inactivo)
         /// </summary>
@@ -280,17 +255,7 @@ namespace WinExamen.Controlador
     /// Clase para deserializar respuestas de la API que tienen estructura específica
     /// </summary>
     /// <typeparam name="T">Tipo de datos esperado</typeparam>
-    public class ApiResponse<T>
-    {
-        [JsonProperty("message")]
-        public string Message { get; set; }
-
-        [JsonProperty("data")]
-        public T Data { get; set; }
-
-        [JsonProperty("count")]
-        public int Count { get; set; }
-    }
+    
 
     #endregion
 }

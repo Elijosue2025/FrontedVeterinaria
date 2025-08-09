@@ -16,8 +16,7 @@ namespace WinExamen.Controlador
         public ApiMascota()
         {
             _httpClient = new HttpClient();
-            _baseUrl = "https://localhost:7157/api/Mascotas"; // Cambia por tu URL base real
-
+            _baseUrl = "https://localhost:7034/api/Mascotas"; // URL correcta
             // Configurar headers
             _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
         }

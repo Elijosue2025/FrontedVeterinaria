@@ -41,8 +41,12 @@
             listarMascotas = new Button();
             dataGridView1 = new DataGridView();
             groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
+            label9 = new Label();
+            label11 = new Label();
+            textBox9 = new TextBox();
+            textBox11 = new TextBox();
+            label12 = new Label();
+            textBox12 = new TextBox();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
@@ -51,12 +55,8 @@
             pesoMascota = new TextBox();
             label8 = new Label();
             fechaNacimiento = new TextBox();
-            label9 = new Label();
-            label11 = new Label();
-            textBox9 = new TextBox();
-            textBox11 = new TextBox();
-            label12 = new Label();
-            textBox12 = new TextBox();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -140,6 +140,7 @@
             agregarMascota.TabIndex = 8;
             agregarMascota.Text = "Agregar";
             agregarMascota.UseVisualStyleBackColor = true;
+            agregarMascota.Click += agregarMascota_Click;
             // 
             // actualizasMascota
             // 
@@ -150,6 +151,7 @@
             actualizasMascota.TabIndex = 9;
             actualizasMascota.Text = "Actualizar";
             actualizasMascota.UseVisualStyleBackColor = true;
+            actualizasMascota.Click += actualizasMascota_Click;
             // 
             // listarMascotas
             // 
@@ -160,6 +162,7 @@
             listarMascotas.TabIndex = 10;
             listarMascotas.Text = "Listar";
             listarMascotas.UseVisualStyleBackColor = true;
+            listarMascotas.Click += listarMascotas_Click;
             // 
             // dataGridView1
             // 
@@ -203,30 +206,57 @@
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             // 
-            // groupBox2
+            // label9
             // 
-            groupBox2.Controls.Add(listarMascotas);
-            groupBox2.Controls.Add(actualizasMascota);
-            groupBox2.Controls.Add(agregarMascota);
-            groupBox2.Location = new Point(755, 35);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(179, 231);
-            groupBox2.TabIndex = 13;
-            groupBox2.TabStop = false;
+            label9.AutoSize = true;
+            label9.Location = new Point(506, 147);
+            label9.Name = "label9";
+            label9.Size = new Size(54, 20);
+            label9.TabIndex = 23;
+            label9.Text = "Estado";
             // 
-            // groupBox3
+            // label11
             // 
-            groupBox3.Controls.Add(dataGridView1);
-            groupBox3.Location = new Point(91, 305);
-            groupBox3.Margin = new Padding(3, 4, 3, 4);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(3, 4, 3, 4);
-            groupBox3.Size = new Size(753, 296);
-            groupBox3.TabIndex = 14;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Pacientes";
+            label11.AutoSize = true;
+            label11.Location = new Point(489, 93);
+            label11.Name = "label11";
+            label11.Size = new Size(102, 20);
+            label11.TabIndex = 21;
+            label11.Text = "FechaRegistro";
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(597, 147);
+            textBox9.Margin = new Padding(3, 4, 3, 4);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(114, 27);
+            textBox9.TabIndex = 20;
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(597, 93);
+            textBox11.Margin = new Padding(3, 4, 3, 4);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(114, 27);
+            textBox11.TabIndex = 18;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(519, 24);
+            label12.Name = "label12";
+            label12.Size = new Size(72, 20);
+            label12.TabIndex = 17;
+            label12.Text = "ID Dueño";
+            label12.Click += label12_Click;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(597, 21);
+            textBox12.Margin = new Padding(3, 4, 3, 4);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(114, 27);
+            textBox12.TabIndex = 16;
             // 
             // label5
             // 
@@ -296,57 +326,30 @@
             fechaNacimiento.Size = new Size(114, 27);
             fechaNacimiento.TabIndex = 8;
             // 
-            // label9
+            // groupBox2
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(506, 147);
-            label9.Name = "label9";
-            label9.Size = new Size(54, 20);
-            label9.TabIndex = 23;
-            label9.Text = "Estado";
+            groupBox2.Controls.Add(listarMascotas);
+            groupBox2.Controls.Add(actualizasMascota);
+            groupBox2.Controls.Add(agregarMascota);
+            groupBox2.Location = new Point(755, 35);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(179, 231);
+            groupBox2.TabIndex = 13;
+            groupBox2.TabStop = false;
             // 
-            // label11
+            // groupBox3
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(489, 93);
-            label11.Name = "label11";
-            label11.Size = new Size(102, 20);
-            label11.TabIndex = 21;
-            label11.Text = "FechaRegistro";
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(597, 147);
-            textBox9.Margin = new Padding(3, 4, 3, 4);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(114, 27);
-            textBox9.TabIndex = 20;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(597, 93);
-            textBox11.Margin = new Padding(3, 4, 3, 4);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(114, 27);
-            textBox11.TabIndex = 18;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(519, 24);
-            label12.Name = "label12";
-            label12.Size = new Size(72, 20);
-            label12.TabIndex = 17;
-            label12.Text = "ID Dueño";
-            label12.Click += label12_Click;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(597, 21);
-            textBox12.Margin = new Padding(3, 4, 3, 4);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(114, 27);
-            textBox12.TabIndex = 16;
+            groupBox3.Controls.Add(dataGridView1);
+            groupBox3.Location = new Point(91, 305);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(753, 296);
+            groupBox3.TabIndex = 14;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Pacientes";
             // 
             // FrmMascota
             // 

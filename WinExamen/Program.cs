@@ -17,6 +17,8 @@ namespace WinExamen
             // Application.Run(new FrmMascotas());
      //       ApplicationConfiguration.Initialize();
             Application.Run(new FrmCitas());
+            Application.Run(new FrmDuenio());
+            Application.Run(new FrmMascota());
         }
     }
 }
